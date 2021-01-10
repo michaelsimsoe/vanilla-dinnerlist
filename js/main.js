@@ -1,38 +1,12 @@
+import { homeContainer } from './homeComponent.js';
+import { createContainer } from './createComponent.js';
+import { listContainer } from './listComponent.js';
 const app = document.getElementById('app');
 
-const dinners = [
-  'Tomatsupper',
-  'Fiskegrateng',
-  'Pølse og potetstappe',
-  'Pannekaker',
-  'Taco',
-  'Pizza',
-  'Kjøttkaker',
-];
-
-const dishList = document.querySelector('.dishes');
-
-function renderDinnerList(dishes = []) {
-  let allDishes = dishes.map((dinner) => `<li>${dinner}</li>`).join('');
-  dishList.innerHTML = allDishes;
-}
-
-const home = `<h2>Landingsside</h2>`;
-const view = `
-  <div class="dinner-list">
-    <div class="dinner-list__header">
-      <h2>Middagsliste</h2>
-    </div>
-    <ul class="dishes">
-    </ul>
-  </div>
-`;
-const create = `<h2>Lag middagsliste</h2>`;
-
 const routes = {
-  '/': home,
-  '/liste': view,
-  '/ny': create,
+  '/': homeContainer,
+  '/liste': listContainer,
+  '/ny': createContainer,
 };
 
 let rootDiv = document.getElementById('root');
@@ -40,11 +14,15 @@ rootDiv.innerHTML = routes[window.location.pathname];
 
 const onNavigate = (pathname) => {
   window.history.pushState({}, pathname, window.location.origin + pathname);
-  console.log(routes.pathname);
-  rootDiv.innerHTML = routes[pathname];
-  console.log(rootDiv);
+  rootDiv.innerHTML = routes[pathname].template;
+  routes[pathname].registerEventListeners();
+  routes[pathname].renderFunction();
+};
+window.onNavigate = onNavigate;
+window.onpopstate = () => {
+  rootDiv.innerHTML = routes[window.location.pathname].template;
 };
 
-window.onpopstate = () => {
-  rootDiv.innerHTML = routes[window.location.pathname];
-};
+document.addEventListener('DOMContentLoaded', () => {
+  rootDiv.innerHTML = routes[window.location.pathname].template;
+});
