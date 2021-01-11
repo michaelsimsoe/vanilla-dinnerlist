@@ -6,21 +6,47 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/main.css" />
 
     <meta name="theme-color" content="#fafafa" />
   </head>
 
   <body>
-    <nav>
-      <ul>
-        <li><a href="#" onclick="onNavigate('/'); return false;">Hjem</a></li>
-        <li>
-          <a href="#" onclick="onNavigate('/liste'); return false;">Liste</a>
-        </li>
-        <li><a href="#" onclick="onNavigate('/ny'); return false;">Ny</a></li>
-      </ul>
-    </nav>
+    <header class="header">
+      <nav>
+        <ul>
+          <li class="router-link-container">
+            <a
+              class="router-link"
+              href="#"
+              onclick="onNavigate('/', this);  return false;"
+              >Hjem</a
+            >
+          </li>
+          <li class="router-link-container">
+            <a
+              class="router-link"
+              href="#"
+              onclick="onNavigate('/liste', this); return false;"
+              >Liste</a
+            >
+          </li>
+          <li class="router-link-container">
+            <a
+              class="router-link"
+              href="#"
+              onclick="onNavigate('/ny', this); return false;"
+              >Ny</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
 
     <div id="root"></div>
     <script type="module" src="js/index.js"></script>

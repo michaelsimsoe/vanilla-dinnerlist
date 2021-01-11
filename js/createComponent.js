@@ -9,15 +9,17 @@ function templateView() {
   <div class="dinner-list__header">
     <h2>Lag middagsliste</h2>
   </div>
-  <div>
-    <input value="${
-      DINNERS_LIST.week + ''
-    }" id="week-input" type="text" placeholder="Uke" name="dish">
-    <button type="submit" id="set-week-btn">Legg til rett</button>
-  </div>
-  <div>
-    <input id="dish-input" type="text" placeholder="Middagsrett" name="dish">
-    <button type="submit" id="add-dish-btn">Legg til rett</button>
+  <div class="dinner-list__create">
+    <div classe="dinner-list__create-week">
+      <input value="${
+        DINNERS_LIST.week + ''
+      }" class="week-input" id="week-input" type="text" placeholder="Uke" name="week">
+      <button type="submit" class="set-week-btn" id="set-week-btn">Uketall</button>
+    </div>
+    <div>
+      <input id="dish-input" type="text" placeholder="Middagsrett" name="dish">
+      <button type="submit" id="add-dish-btn">Legg til rett</button>
+    </div>
   </div>
   <ul class="new-dish-list">
   </ul>
