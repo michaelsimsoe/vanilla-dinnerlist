@@ -48,10 +48,12 @@ function setWeek(event) {
 
 function addDish(event) {
   event.preventDefault();
-  if (event.target && event.target.id == 'add-dish-btn') {
-    const dishInput = document.getElementById('dish-input');
-    const dishList = document.querySelector('.new-dish-list');
-
+  const dishInput = document.getElementById('dish-input');
+  if (
+    (event.target && event.target.id == 'add-dish-btn') ||
+    (event.keyCode === 13 && dishInput.value != '')
+  ) {
+    if (dishInput.value.length < 0) return;
     if (DINNERS_LIST.list.length < 7) {
       DINNERS_LIST.list.push(dishInput.value);
     } else {
@@ -69,6 +71,7 @@ const destroyEvent = new Event('create-component-destroy');
 const registerEventListeners = () => {
   // const addDishBtn = document.getElementById('add-dish-btn');
   document.addEventListener('click', addDish);
+  document.addEventListener('keyup', addDish);
   document.addEventListener('click', setWeek);
 };
 const removeEventListeners = () => {
