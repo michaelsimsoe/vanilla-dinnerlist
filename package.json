@@ -1,0 +1,24 @@
+{
+  "name": "vanilla-dinnerlist",
+  "version": "1.0.0",
+  "description": "My attempt to make a Single Page Application using no framework.",
+  "main": "main.js",
+  "scripts": {
+    "start": "snowpack dev",
+    "build": "snowpack build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelsimsoe/vanilla-dinnerlist.git"
+  },
+  "author": "Michael Køryserth-Simsø",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/michaelsimsoe/vanilla-dinnerlist/issues"
+  },
+  "homepage": "https://github.com/michaelsimsoe/vanilla-dinnerlist#readme",
+  "devDependencies": {
+    "snowpack": "^2.18.5"
+  }
+}
