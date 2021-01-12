@@ -29,9 +29,21 @@ function templateView() {
 function renderDinnerList() {
   const dishList = document.querySelector('.dish-list');
   let allDishes;
+  const DAYS = [
+    'mandag',
+    'tirsdag',
+    'onsdag',
+    'torsdag',
+    'fredag',
+    'lørdag',
+    'søndag',
+  ];
   if (dinners.list.length > 0) {
     allDishes = dinners.list
-      .map((dinner) => `<li class="dish-list__item">${dinner}</li>`)
+      .map(
+        (dinner, i) =>
+          `<li class="dish-list__item"><span class="item__day">${DAYS[i]}</span>${dinner}</li>`
+      )
       .join('');
   } else {
     allDishes = 'Ingen retter i listen';

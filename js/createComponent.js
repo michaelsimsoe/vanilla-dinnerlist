@@ -17,8 +17,8 @@ function templateView() {
       <button type="submit" class="set-week-btn" id="set-week-btn">Uketall</button>
     </div>
     <div>
-      <input id="dish-input" type="text" placeholder="Middagsrett" name="dish">
-      <button type="submit" id="add-dish-btn">Legg til rett</button>
+      <input class="dish-input" id="dish-input" type="text" placeholder="Middagsrett" name="dish">
+      <button class="add-dish-btn" type="submit" id="add-dish-btn">Legg til rett</button>
     </div>
   </div>
   <ul class="new-dish-list">
@@ -28,9 +28,21 @@ function templateView() {
 }
 
 function renderDinnerList() {
+  const DAYS = [
+    'mandag',
+    'tirsdag',
+    'onsdag',
+    'torsdag',
+    'fredag',
+    'lørdag',
+    'søndag',
+  ];
   const dishList = document.querySelector('.new-dish-list');
   const allDishes = DINNERS_LIST.list
-    .map((dinner) => `<li>${dinner}</li>`)
+    .map(
+      (dinner, i) =>
+        `<li class="new-item"><span class="new-item__day">${DAYS[i]}: </span>${dinner}</li>`
+    )
     .join('');
   if (!dishList) return;
   dishList.innerHTML = allDishes;
