@@ -1,17 +1,17 @@
-// import { DINNERS_LIST } from './createComponent.js';
+import { DINNERS_LIST } from './createComponent.js';
 
-const DINNERS_LIST = {
-  week: 2,
-  list: [
-    'Tomatsuppe',
-    'Pannekaker',
-    'Kyllingvinger',
-    'Fiskegrateng',
-    'Taco',
-    'Pizza',
-    'Kjøttkaker',
-  ],
-};
+// const DINNERS_LIST = {
+//   week: 2,
+//   list: [
+//     'Tomatsuppe',
+//     'Pannekaker',
+//     'Kyllingvinger',
+//     'Fiskegrateng',
+//     'Taco',
+//     'Pizza',
+//     'Kjøttkaker',
+//   ],
+// };
 const dinners = DINNERS_LIST;
 function templateView() {
   return `
