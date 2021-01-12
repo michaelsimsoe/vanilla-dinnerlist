@@ -186,15 +186,33 @@ h4 {
 }
 
 /*------------------------------------*\
+  #COMMON
+\*------------------------------------*/
+.dinner-list {
+  display: flex;
+  flex-direction: column;
+  height: calc(90vh - 4em);
+  width: 95%;
+  margin: 2em auto;
+}
+
+.dinner-list__header {
+  margin: 0.5em;
+}
+
+/*------------------------------------*\
   #HEADER
 \*------------------------------------*/
 .header {
+  height: 10vh;
+  padding: 2em 0.5em;
 }
 
 .header > nav > ul {
   display: flex;
   flex-direction: row;
   list-style: none;
+  justify-content: space-around;
 }
 
 .header > nav > ul > li {
@@ -250,4 +268,24 @@ h4 {
 
 .set-week-btn {
   height: 40px;
+}
+
+/*------------------------------------*\
+  #VIEW LIST
+\*------------------------------------*/
+
+.dish-list {
+}
+
+.dish-list__item {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin: 0.5em;
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 2px 2px 13px -5px rgba(0, 0, 0, 0.75);
+}
+
+
 }

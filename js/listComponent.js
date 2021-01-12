@@ -1,15 +1,18 @@
-import { DINNERS_LIST } from './createComponent.js';
+// import { DINNERS_LIST } from './createComponent.js';
 
-function tag(strings, week) {
-  week = DINNERS_LIST.week;
-  console.log(week);
-  return `${strings} ${week}`;
-}
-
-function getWeek() {
-  return DINNERS_LIST.week;
-}
-
+const DINNERS_LIST = {
+  week: 2,
+  list: [
+    'Tomatsuppe',
+    'Pannekaker',
+    'Kyllingvinger',
+    'Fiskegrateng',
+    'Taco',
+    'Pizza',
+    'Kjøttkaker',
+  ],
+};
+const dinners = DINNERS_LIST;
 function templateView() {
   return `
   <div class="dinner-list">
@@ -17,19 +20,19 @@ function templateView() {
       <h2>Middagsliste</h2>
       <h3>Uke ${DINNERS_LIST.week}</h3>
     </div>
-    <ul class="dishes">
+    <ul class="dish-list">
     </ul>
   </div>
 `;
 }
 
-const dinners = DINNERS_LIST;
-
 function renderDinnerList() {
-  const dishList = document.querySelector('.dishes');
+  const dishList = document.querySelector('.dish-list');
   let allDishes;
   if (dinners.list.length > 0) {
-    allDishes = dinners.list.map((dinner) => `<li>${dinner}</li>`).join('');
+    allDishes = dinners.list
+      .map((dinner) => `<li class="dish-list__item">${dinner}</li>`)
+      .join('');
   } else {
     allDishes = 'Ingen retter i listen';
   }

@@ -41,7 +41,6 @@ function setWeek(event) {
   if (event.target && event.target.id == 'set-week-btn') {
     const weekInput = document.getElementById('week-input');
 
-    console.log(weekInput.value);
     DINNERS_LIST.week = weekInput.value;
     console.log(DINNERS_LIST);
     // weekInput.value = '';

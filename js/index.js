@@ -25,7 +25,6 @@ const onNavigate = (pathname, element) => {
 
 function setActiveLink(element) {
   //TODO: call from another place in order to use on direct navigation
-  console.log(element);
   const activeLink = document.querySelector('.router-link-active');
   if (activeLink) {
     activeLink.classList.remove('router-link-active');
