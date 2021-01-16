@@ -78,6 +78,7 @@ img {
 
 body {
   background-color: var(--main-bg-color);
+  overflow-x: hidden;
 }
 
 /*------------------------------------*\
@@ -216,7 +217,14 @@ h4 {
 \*------------------------------------*/
 .header {
   height: 10vh;
-  padding: 2em 0.5em;
+  padding: 0.6em 0.5em;
+}
+
+.header > .logo {
+  color: var(--primary);
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
 }
 
 .header > nav > ul {
@@ -311,7 +319,7 @@ h4 {
 .new-item {
   margin: 0.5em;
   padding: 0.1em;
-  animation: slide-in-l 0.3s forwards;
+  animation: fade-in 0.3s forwards;
 }
 
 .new-item__day {
@@ -357,5 +365,20 @@ h4 {
   to {
     opacity: 1;
     transform: translateX(0px);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    transform: rotate(-5deg);
+    opacity: 0;
+  }
+  40% {
+    transform: rotate(5deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: rotate(0deg);
+    opacity: 1;
   }
 }

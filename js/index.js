@@ -13,6 +13,7 @@ const routes = {
 rootDiv.innerHTML = routes[window.location.pathname];
 
 const onNavigate = (pathname, element) => {
+  if (window.location.pathname === pathname) return;
   routes[window.location.pathname].removeEventListeners();
   routes[window.location.pathname].destroyEvent;
   window.history.pushState({}, pathname, window.location.origin + pathname);
