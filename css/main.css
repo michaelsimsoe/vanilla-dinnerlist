@@ -225,6 +225,7 @@ h4 {
   font-size: 1.6rem;
   margin: 0;
   padding: 0;
+  transform: skew();
 }
 
 .header > nav > ul {

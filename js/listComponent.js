@@ -26,6 +26,18 @@ function templateView() {
 `;
 }
 
+function getList() {
+  let list = fetch('/api/dinner-list');
+  list
+    .then((res) => {
+      console.log(res);
+      return res.text();
+    })
+    .then((data) => console.log(data));
+}
+
+getList();
+
 function renderDinnerList() {
   const dishList = document.querySelector('.dish-list');
   let allDishes;

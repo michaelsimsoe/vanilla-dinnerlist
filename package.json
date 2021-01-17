@@ -20,5 +20,8 @@
   "homepage": "https://github.com/michaelsimsoe/vanilla-dinnerlist#readme",
   "devDependencies": {
     "snowpack": "^2.18.5"
+  },
+  "dependencies": {
+    "mongodb": "^3.6.3"
   }
 }
