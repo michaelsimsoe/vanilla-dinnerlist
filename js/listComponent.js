@@ -27,7 +27,7 @@ function templateView() {
 }
 
 function getList() {
-  let list = fetch('/api/dinner-list');
+  let list = fetch('api/dinner-lists');
   list
     .then((res) => {
       console.log(res);

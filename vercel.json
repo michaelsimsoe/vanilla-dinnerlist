@@ -5,6 +5,9 @@
   },
   "routes": [
     { "handle": "filesystem" },
-    { "src": "/.*", "dest": "/index.html" }
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/ny", "dest": "/index.html" },
+    { "src": "/liste", "dest": "/index.html" },
+    { "src": "/api/dinner-lists", "dest": "api/dinner-lists" }
   ]
 }
